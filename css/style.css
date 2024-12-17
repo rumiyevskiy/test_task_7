@@ -496,27 +496,22 @@ body.__lock {
   padding: 130px 10px 10px 10px;
   font-size: 24px;
 }
+@media (max-width: 1200px) {
+  .main {
+    padding: 185px 10px 10px 10px;
+  }
+}
+@media (max-width: 768px) {
+  .main {
+    padding: 200px 10px 10px 10px;
+  }
+}
 
 .timer {
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: bold;
   margin-bottom: 20px;
-}
-
-.target-element {
-  width: 200px;
-  height: 200px;
-  background-color: lightblue;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
-}
-
-.target-element.finished {
-  background-color: lightcoral;
-  color: white;
-  transform: scale(1.2);
+  text-align: center;
 }
 
 .footer {

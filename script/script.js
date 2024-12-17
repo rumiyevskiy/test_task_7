@@ -113,7 +113,7 @@ document.addEventListener("DOMContentLoaded", function () {
             timeRemaining--;
         }
 
-        // updateTimer();
-        // const timerInterval = setInterval(updateTimer, 1000);
+        updateTimer();
+        const timerInterval = setInterval(updateTimer, 1000);
   
 });
