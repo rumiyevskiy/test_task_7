@@ -98,7 +98,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const targetElementFirst = document.querySelectorAll('.first');
   const targetElementSecond = document.querySelectorAll('.second');
   
-  const startTime = 90; 
+  const startTime = 10; 
   let timeRemaining = startTime;
 
   function updateTimer() {
