@@ -118,6 +118,7 @@ body.__lock {
   cursor: pointer;
   display: flex;
   justify-content: center;
+  opacity: 0.8;
 }
 
 .return__btn img {
@@ -131,6 +132,7 @@ body.__lock {
   display: none;
   opacity: 0;
   visibility: hidden;
+  transition: opacity 0.9s ease;
 }
 
 .header {
@@ -412,6 +414,7 @@ body.__lock {
     font-size: 11px;
   }
 }
+
 .header__menu__icon.burger {
   z-index: 5;
   display: block;
@@ -514,6 +517,165 @@ body.__lock {
   text-align: center;
 }
 
-.footer {
-  background-color: #008000;
+.footer .footer__body {
+  padding: 10px 0;
+  transition: opacity 0.8s ease;
+}
+.footer .footer__body.first {
+  width: 100%;
+  position: absolute;
+}
+.footer .footer__body .socials {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  pointer-events: none;
+}
+.footer .footer__body .socials ul {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  padding: 10px 0;
+}
+.footer .footer__body .socials .socials__list {
+  flex: 0 0 60%;
+  border-right: 2px solid #9c9c9c;
+}
+.footer .footer__body .socials .socials__list .socials__list-item .item-img-box img {
+  width: 34px;
+  height: 34px;
+}
+@media (max-width: 768px) {
+  .footer .footer__body .socials .socials__list {
+    flex: 0 0 100%;
+    border: none;
+  }
+}
+.footer .footer__body .socials .pays__list {
+  flex: 0 0 40%;
+  flex-wrap: wrap;
+}
+.footer .footer__body .socials .pays__list .pays__list-item .item-img-box img {
+  width: 60px;
+  height: 40px;
+}
+@media (max-width: 768px) {
+  .footer .footer__body .socials .pays__list {
+    flex: 0 0 100%;
+  }
+}
+.footer .footer__body .footer__app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 20px 0;
+  background-color: #f7f7f7;
+}
+.footer .footer__body .footer__app .app__text {
+  flex: 0 0 30%;
+  font-size: 14px;
+}
+@media (max-width: 768px) {
+  .footer .footer__body .footer__app .app__text {
+    flex: 0 0 100%;
+    text-align: center;
+  }
+}
+.footer .footer__body .footer__app .app__img {
+  flex: 0 0 15%;
+}
+.footer .footer__body .footer__app .app__img img {
+  width: 135px;
+  height: 40px;
+}
+.footer .footer__body .footer__menu {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+.footer .footer__body .footer__menu .menu__list {
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: space-around;
+  margin: 10px 0;
+  gap: 5px;
+}
+.footer .footer__body .footer__menu .menu__list .list__item .item__text {
+  color: #777777;
+  font-size: 12px;
+  text-align: center;
+}
+.footer .footer__body .copyright {
+  text-align: center;
+}
+.footer .footer__body .footer__menu.last__menu {
+  display: flex;
+}
+.footer .footer__body .footer__menu.last__menu .menu__list {
+  flex-wrap: wrap;
+}
+.footer .footer__body .footer__menu.last__menu .menu__list .item__text {
+  color: #000000;
+  text-decoration: underline;
+  margin: 10px;
+}
+.footer .footer__body.second {
+  padding: 20px;
+  width: 100%;
+  position: absolute;
+}
+.footer .footer__body.second .socials {
+  justify-content: center;
+}
+.footer .footer__body.second .socials .socials__list {
+  flex: 0 0 100%;
+  border: none;
+  justify-content: center;
+  gap: 15px;
+}
+.footer .footer__body.second .my-account {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin: 10px 0;
+}
+.footer .footer__body.second .my-account .my-account__text a {
+  color: #616161;
+  font-size: 12px;
+}
+.footer .footer__body.second .my-account .my-account__text a:hover {
+  text-decoration: underline;
+}
+.footer .footer__body.second .my-account .my-account__text a:first-child {
+  font-size: 14px;
+  font-weight: 700;
+  color: #000000;
+}
+.footer .footer__body.second .my-account .my-account__text a p {
+  margin: 10px 0;
+}
+.footer .footer__body.second .footer__menu .menu__list .menu__list-item .item__title {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.footer .footer__body.second .footer__menu .menu__list .menu__list-item .item__list li {
+  margin: 10px 0;
+}
+.footer .footer__body.second .footer__menu .menu__list .menu__list-item .item__list a {
+  color: #000000;
+}
+.footer .footer__body.second .footer__menu .menu__list .menu__list-item .item__list a:hover {
+  text-decoration: underline;
+}
+@media (max-width: 768px) {
+  .footer .footer__body.second .footer__menu .menu__list {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
 }

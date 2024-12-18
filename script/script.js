@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.body.classList.add('__pc');
   }
 
-  // кнопка вгору
+
 
   const returnBtn = document.querySelector('.return__btn');
 
@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", function () {
     })
   });
 
-  // меню бургер
+
 
   const burgerIcon = document.querySelectorAll('.burger');
 
@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function () {
     burgerIcon.forEach((burgerBtn, index) => {
       burgerBtn.addEventListener('click', (e) => {
         console.log("target: ", e.target);
-        // document.body.classList.toggle('__lock');
+
         burgerBtn.classList.toggle('__active');
         menuBody[index].classList.toggle('__active');
       })
@@ -91,29 +91,48 @@ document.addEventListener("DOMContentLoaded", function () {
 
   };
 
+  
+
+
   const timerElement = document.getElementById('timer');
-  const targetElementFirst = document.querySelector('.header__body.first');
-  console.log("targetElementFirst: ", targetElementFirst);
-  const targetElementSecond = document.querySelector('.header__body.second');
-  console.log("targetElementSecond: ", targetElementSecond);
+  const targetElementFirst = document.querySelectorAll('.first');
+  const targetElementSecond = document.querySelectorAll('.second');
+  
+  const startTime = 5; 
+  let timeRemaining = startTime;
 
-        let timeRemaining = 10; // 1.5 хвилини = 90 секунд
+  function updateTimer() {
+      const minutes = Math.floor(timeRemaining / 60);
+      const seconds = timeRemaining % 60;
+      timerElement.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
 
-        function updateTimer() {
-            const minutes = Math.floor(timeRemaining / 60);
-            const seconds = timeRemaining % 60;
-            timerElement.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+      if (timeRemaining === 0) {
+          toggleElements();
+          resetTimer();
+      } else {
+          timeRemaining--;
+      }
+  }
 
-            if (timeRemaining === 0) {
-              clearInterval(timerInterval);
-              targetElementFirst.classList.add('hidden');
-              targetElementSecond.classList.remove('hidden');
-            }
+  function toggleElements() {
 
-            timeRemaining--;
-        }
+    
+    targetElementFirst.forEach((elem, index) => {
+      elem.classList.toggle('hidden');
+    })
 
-        updateTimer();
-        const timerInterval = setInterval(updateTimer, 1000);
+    targetElementSecond.forEach((elem, index) => {
+      elem.classList.toggle('hidden');
+    })
+  }
+
+  function resetTimer() {
+      timeRemaining = startTime;
+      updateTimer(); 
+  }
+
+  updateTimer();
+  setInterval(updateTimer, 1000);
+
   
 });
